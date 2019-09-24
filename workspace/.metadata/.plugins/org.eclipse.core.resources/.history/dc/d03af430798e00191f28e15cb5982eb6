@@ -1,0 +1,11 @@
+package cn.spark.study.core
+
+import org.apache.spark.SparkContext
+import org.apache.spark.SparkConf
+
+object Text2 {
+  def main(args:Array[String]){
+    val conf=new SparkConf().setAppName("Text").setMaster("local")
+    val sc=new SparkContext(conf)
+  }
+}

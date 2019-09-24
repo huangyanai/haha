@@ -1,0 +1,9 @@
+package cn.spark.study.core
+
+object WordCount2 {
+  def main(args:Array[String]){
+    val conf=new SparkConf()
+             .setAppName("WordCount")
+             .setMaster("local")    
+  }
+}

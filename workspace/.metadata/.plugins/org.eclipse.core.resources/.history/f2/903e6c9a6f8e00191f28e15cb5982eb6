@@ -1,0 +1,23 @@
+package cn.spark.study.core
+
+import org.apache.spark.SparkContext
+import org.apache.spark.SparkConf
+
+object Text {
+  def main(args:Array[String]){
+    val conf=new SparkConf().setAppName("Text").setMaster("local")
+    val sc=new SparkContext(conf)
+    mapTest()
+   def mapTest(){
+      //原来rdd
+      val arr=Array(1,2,3,4,5,6)
+      //新的rdd
+      val arrRDD=sc.parallelize(arr,2)
+      val result=arrRDD.map(x=>x*4)//map为转换操作，还需要一个行动操作来启动
+      result.foreach(x=>print(x+","))
+      
+      val result2=arrRDD.map(x=>x*x)
+      result2.foreach(x=>print(x+","))
+    }
+  }
+}
